@@ -1,4 +1,9 @@
+#!/bin/bash
 
+##########################  	
+## GENERATE OUTPUT FILE ##
+##########################
+		
 		
 		# 1.1) Remove headers from DE files
 		cat salmon.counts.matrix.salmon_13C_0h_vs_salmon_23C_6h.edgeR.DE_results | sed 1d > test/salmon.counts.matrix.salmon_13C_0h_vs_salmon_23C_6h.edgeR.DE_results.tmp
