@@ -7,21 +7,10 @@
 #######################################################################
 #######################################################################
 
-## The objective of this analysis is to search for potential homology in biological processes using existing RNAseq datasets, correcting for differences in experimental design.
-## Noemie Sierra, Gold Lab. Completed Mar 12th, 2021.
 
-## The analysis to identifying groups of orthologues involves in order: 
-	# 1) RSEM-SE mapping to genomes/transcriptomes to find identities of reads in datasets
-	# 2) Differential Gene Expression analysis with Trinity:edgeR to identify genes of interest in each experiment
-		# run_DE_analysis.pl: identify differentially expressed transcripts
-		# analyze_diff_expr.pl: extract the DE transcripts and cluster them according to their patterns across the conditions
-		# -> output is clusters of genes expressed in similar patterns under heat shock for each animal
-	# 3) Transdecoder translater the reads into protein sequences so orthology can be determined on the basis of protein structure (function) rather than nucleotide sequence
-	# 4) OrthoFinder clusters transcripts by homology, performed on the files of condition-clustered transcript lists
-		# performed in two steps: blast search on hpc, orthofinder on completed blast searches locally
-		# -> output is orthologue groups for transcripts differentially expressed within the treatments across all species
-	# 5) Generate the output file combining orthologue and differential expression data to be used with the Lancaster P-Value Aggregation.
-
+ ## The first steps of this project (data download, rsem, transdecoder, trinity DGE) were run on the Peloton HPC at UC Davis. 
+ ## All output and error logs from job submission are stored in the slurm-logs folder. 
+ ## The remaining steps of this project (orthofinder) were run on a local computer running OSX Catalina 10.15.2.
 
 ## To run the following analysis you will need to have the following versions installed:
  	# sratoolkit-v2.10.2
@@ -38,53 +27,76 @@
 ## The structure of this project folder can be found in the attached project_folder_structure.txt
 
 
-
-
 ##########################  	
 ## PROJECT FOLDER SETUP ##
 ##########################
 
-## The first steps of this project (data download, rsem, transdecoder, trinity DGE) were run on the Peloton HPC at UC Davis. All output and error logs from job submission are stored in the slurm-logs folder. The remaining steps of this project (orthofinder) were run on a local computer running OSX Catalina 10.15.2.
 
- 	mkdir ./HSR
- 	proj=$(pwd)/HSR
- 	cd $proj
+	#########################################
+	## MANUAL INPUT #########################
+	#########################################
 	
- 	#spp=(cataglyphis haliclona salmo gallus magallanas tegula galaxea acropora prenolepsis cryptolaemus melanotaenia nilaparvata sogatella laodelphax)
- 	#spp=(tegula galaxea acropora prenolepsis cryptolaemus melanotaenia nilaparvata sogatella laodelphax)
- 	spp=(tegula galaxea prenolepsis cryptolaemus melanotaenia)
+	# 0.1) Please input the folder names for analyses you are conducting:
+	analyses=(REGEN HSR2)
+		
+	# 0.2) Please place the relevant list of species for any of the analyses you are conducting:
+	sppHSR2=(tegula galaxea prenolepsis cryptolaemus melanotaenia)
+	sppREGEN=(sponge anemone planaria cucumber zebrafish axolotl)
 	
- 	# Set up directory structure
- 	mkdir {data,edgeR,transdecoder,orthofinder,scripts,slurm-logs}
- 	for s in "${spp[@]}"; do
- 	  mkdir data/"$s"
- 	  mkdir data/"$s"/raw
- 	  mkdir data/"$s"/rsem_SE
- 	done
+	#spp=(cataglyphis haliclona salmo gallus magallanas tegula galaxea acropora prenolepsis cryptolaemus melanotaenia nilaparvata sogatella laodelphax)
+	#sppHSR=(tegula galaxea acropora prenolepsis cryptolaemus melanotaenia nilaparvata sogatella laodelphax)
 	
- 	# Download accession list into data/spp/raw folders
- 	for s in "${spp[@]}"; do
- 	  url=https://raw.githubusercontent.com/nsierra1/HSR_orthologues/master/download_info/accession_"$s".txt
- 	  wget -P data/"$s"/raw "$url"
- 	done
-	
- 	# Download unzipping instructions into data/
- 	url=https://raw.githubusercontent.com/nsierra1/HSR_orthologues/master/download_info/gunzip_all.sh
- 	wget -P data/ "$url"
-	
- 	# Download genome accession and unzipping instruction into data/
- 	url=https://raw.githubusercontent.com/nsierra1/HSR_orthologues/master/download_info/genome_accessions_unzip.sh
- 	wget -P data/ "$url"
+	# 0.3) Load programs to path
+	export PATH=$PATH:~/tools/sratoolkit.2.10.2/bin:\
+	~/tools/RSEM-1.3.3/bin:\
+	~/tools/etc
+
  	
- 	# Load programs to path
- 	export PATH=$PATH:~/tools/sratoolkit.2.10.2/bin:\
- 	~/tools/RSEM-1.3.3/bin:\
- 	~/tools/etc
+ 	#########################################
+ 	#########################################
+	
+	
+	
+	# 0.4) Set up directory structure
+	for a in "${analyses[@]}"; do
+	
+ 	  mkdir ./"$a"
+ 	  cd ./"$a"
+ 	  mkdir {data,edgeR,transdecoder,orthofinder,scripts,slurm-logs}
+ 	  
+ 	  # Set up data files for each species
+ 	  if [ "$a" == "${analyses[0]}" ]; then   spp=("${sppREGEN[@]}"); 
+ 	  elif [ "$a" == "${analyses[1]}" ]; then    spp=("${sppHSR2[@]}"); 
+ 	  fi
+
+ 	  for s in "${spp[@]}"; do
+ 	    mkdir data/"$s"
+ 	    mkdir data/"$s"/raw
+ 	    mkdir data/"$s"/rsem_SE
+ 	  done
+ 	  
+ 	# 0.5) Download accession list into data/spp/raw folders
+ 	  for s in "${spp[@]}"; do
+ 	    #url=https://raw.githubusercontent.com/nsierra1/HSR_orthologues/master/download_info/accession_"$s".txt
+ 	    url=https://raw.githubusercontent.com/nsierra1/RNAseq_pValueAggregation/master/download_info"$a"/accession_"$s".txt
+ 	    wget -P data/"$s"/raw "$url"
+ 	  done
+	  
+ 	  # 0.6) Download unzipping instructions into data/
+ 	  #url=https://raw.githubusercontent.com/nsierra1/HSR_orthologues/master/download_info/gunzip_all.sh
+ 	  url=https://raw.githubusercontent.com/nsierra1/RNAseq_pValueAggregation/master/download_info"$a"/gunzip_all.sh
+ 	  wget -P data/ "$url"
+	  
+ 	  # 0.7) Download genome accession and unzipping instruction into data/
+ 	  url=https://raw.githubusercontent.com/nsierra1/RNAseq_pValueAggregation/master/download_info"$a"/genome_accessions_unzip.sh
+ 	  wget -P data/ "$url"
+ 	  
+ 	  cd ..
+ 	  
+ 	done
+ 	
  		
- 	
-
- 
-  	
+ 		
 ################### 	
 ## DATA DOWNLOAD ##
 ###################

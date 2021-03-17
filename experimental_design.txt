@@ -1,0 +1,185 @@
+#####################################################
+#####################################################
+## EXPERIMENTAL DESIGN DESCRIPTIONS - REGENERATION ##
+#####################################################
+#####################################################
+
+
+
+###### SPONGE - Halisarca caerulea #######################################################
+	
+	# Kenny, N. J. et al. Towards the identification of ancestrally shared regenerative mechanisms across the Metazoa: A Transcriptomic case study in the Demosponge Halisarca caerulea. Mar. Genomics (2017).
+	
+	PRJNA371551
+	
+	Tissue from one individual collected from unwounded (t0), 2h and 12h post-wound. Additional individuals tissue was pooled into the 2h sample. 1 replicate each.
+	
+	time_0	time_1	time_2
+	0h_1	2h_1	12h_1
+	
+
+
+###### ANEMONE - Nematostella vectensis ##################################################
+
+	# Schaffer, A. A., Bazarsky, M., Levy, K., Chalifa-Caspi, V. & Gat, U. A transcriptional time-course analysis of oral vs. aboral whole-body regeneration in the Sea anemone Nematostella vectensis. BMC Genomics 17, 718 (2016).
+	
+	PRJNA330595
+	
+	Cross section near oral and aboral wound ends collected from a mid shaft bisection. 2 replicates each.
+	
+	time_0	time_1	time_2		time_3
+	0h_AB_1	8h_AB_1	24h_AB_1	72h_AB_1	
+	0h_OR_2	8h_OR_2	24h_OR_2	72h_OR_2	
+	
+
+
+###### PLANARIA - Schmidtea mediterranea #################################################
+
+	# Kao, D., Felix, D. & Aboobaker, A. The planarian regeneration transcriptome reveals a shared but temporally shifted regulatory program between opposing head and tail scenarios. BMC Genomics 14, 797 (2013).
+	
+	PRJEB4686
+	
+	Pre-pharyngeal tissue near wound site. Four animals pooled for t1, four for t2; two for t3, t4 and t5; eight for t0. 2 replicates each.
+	
+	time_0	time_1		time_2	time_3	time_4		time_5
+	0h_1	0.5-1h_1	2-3h_1	4-8h_1	10-18h_1	24-72h_1
+	0h_2	0.5-1h_2	2-3h_2	4-8h_2	10-18h_2	24-72h_2
+
+
+###### CUCUMBER - Apostichopus japonicus #################################################
+
+	# Sun, L., Yang, H., Chen, M., Ma, D. & Lin, C. RNA-Seq reveals dynamic changes of gene expression in key stages of intestine regeneration in the sea cucumber Apostichopus japonicas. PloS One 8, e69441 (2013).
+	
+	PRJNA192808
+	
+	Intestinal tissue collected post-evisceration. 15 individuals pooled for each experimentad condition. 1 replicate each.
+	
+	time_0	time_1	time_2	time_3	time_4
+	0d_1	3d_1	7d_1	14d_1	21d_1
+	
+	
+
+
+###### ZEBRAFISH - Danio rerio ###########################################################
+
+	# Jiang, L., Romero-Carvajal, A., Haug, J. S., Seidel, C. W. & Piotrowski, T. Gene-expression analysis of hair cell regeneration in the zebrafish lateral line. Proc. Natl. Acad. Sci. 111, E1383–E1392 (2014).
+	
+	PRJNA242641
+	
+	Mantle and inner support cells (hair cell regenerative precursors) from 5 days post fertilsation larvae treated for 30min with neomycin (hair cell ablation) and recovered for 1,3 and 5 hrs.
+	
+	time_0	time_1	time_2	time_3
+	C_1		1h_1	3h_1	5h_1
+	C_2		1h_2	3h_2	5h_2
+	C_3		1h_3	3h_3	5h_3
+
+
+###### AXOLOTL - Ambystoma mexicanum #####################################################
+
+	# Wu, C.-H., Tsai, M.-H., Ho, C.-C., Chen, C.-Y. & Lee, H.-S. De novo transcriptome sequencing of axolotl blastema for identification of differentially expressed genes during limb regeneration. BMC Genomics 14, 434 (2013).
+	
+	PRJNA186654
+	
+	Tissue from regenerating blastema and non-regenerating stump (due to denervation). Unspecific number of individuals pooled to sample.
+	
+	
+
+
+
+#####################################################
+#####################################################
+## EXPERIMENTAL DESIGN DESCRIPTIONS - HEAT SHOCK   ##
+#####################################################
+#####################################################
+
+
+
+###### SILVERANT - Cataglyphis bombycina #################################################
+	
+	# Willot, Q., Mardulyn, P., Defrance, M., Gueydan, C. & Aron, S. Molecular chaperoning helps safeguarding mitochondrial integrity and motor functions in the Sahara silver silverant Cataglyphis bombycina. Sci. Rep. 8, 1–8 (2018).
+	
+	PRJNA419094
+	
+	Pooled 10 individuals per sample, all collected after 3h in respective conditions
+	
+	time_0	time_1
+	25C_1	45C_1
+	25C_2	45C_2
+	25C_3	45C_3
+	25C_4	45C_4	
+	
+	
+	
+	
+###### CHICKEN - Gallus gallus var Fayoumi, Broiler, Advanced Intercrossed Line #########
+	
+	# Lan, X., Hsieh, J. C. F., Schmidt, C. J., Zhu, Q. & Lamont, S. J. Liver transcriptome response to hyperthermic stress in three distinct chicken lines. BMC Genomics 17, 4–14 (2016).
+	
+	ArrayExpress: E-MTAB-4569
+
+	Collected liver tissue. 35C group was exposed for 7h per day between 22-28 days of age. Remaining time was at 25C. 25C group was kept at 25C throughout.
+	
+	time_0		time_1
+	25C_BRI_1	35C_BRI_1
+	25C_BRI_2	35C_BRI_2
+	25C_BRI_3	35C_BRI_3
+	25C_BRI_4	35C_BRI_4
+	
+	25C_FAY_1	35C_FAY_1
+	25C_FAY_2	35C_FAY_2
+	25C_FAY_3	35C_FAY_3
+	25C_FAY_4	35C_FAY_4
+	
+	25C_AIL_1	35C_AIL_1
+	25C_AIL_2	35C_AIL_2
+	25C_AIL_3	35C_AIL_3
+	25C_AIL_4	35C_AIL_4
+	
+	
+	
+	
+###### OYSTER - Magallanas gigas (formerly Crassostrea gigas)############################
+	
+	# Yang, C. et al. The transcriptional response of the Pacific oyster Crassostrea gigas against acute heat stress. Fish Shellfish Immunol. 68, 132–143 (2017).
+	
+	PRJNA232944
+	
+	Haemolymph of 15 oysters pooled per sample
+	
+	time_0		time_1		time_2		time_3
+	4C_0h_1		25C_6h_1	25C_12h_1	25C_24h_1
+	4C_0h_2		25C_6h_2	25C_12h_2	25C_24h_2
+	
+	
+	
+		
+###### SALMON - Salmo salar #############################################################
+	
+	# Shi, K. P. et al. RNA-seq reveals temporal differences in the transcriptome response to acute heat stress in the Atlsilverantic salmon (Salmo salar). Comp. Biochem. Physiol. - Part D Genomics Proteomics 30, 169–178 (2019).
+	
+	PRJNA427772
+	
+	Liver from 4 fish was pooled for each sample
+	
+	time_0		time_1		time_2
+	13C_0h_1	23C_6h_1	23C_24h_1
+	13C_0h_2	23C_6h_2	23C_24h_2	
+	13C_0h_3	23C_6h_3	23C_24h_3	
+	
+	
+	
+	
+###### SPONGE - Haliclona tubifera ######################################################	
+	
+	# Guzman, C. & Conaco, C. Gene expression dynamics accompanying the sponge thermal stress response. PLoS One 11, 1–15 (2016).
+	
+	PRJNA274004
+	
+	Two individuals broken up into pieces. Fragments of both individuals contained within each sample, pooled.
+	
+	time_0		time_1		time_2
+	29C_12h_1	34C_4h_1	34C_12h_1
+	29C_12h_2	34C_4h_2	34C_12h_2
+	
+	
+
