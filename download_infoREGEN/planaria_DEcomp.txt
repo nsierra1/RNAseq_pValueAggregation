@@ -1,0 +1,5 @@
+planaria.counts.matrix.planaria_0h_vs_planaria_0.5-1h.edgeR.DE_results
+planaria.counts.matrix.planaria_0.5-1h_vs_planaria_2-3h.edgeR.DE_results
+planaria.counts.matrix.planaria_2-3h_vs_planaria_4-8h.edgeR.DE_results
+planaria.counts.matrix.planaria_4-8h_vs_planaria_10-18h.edgeR.DE_results
+planaria.counts.matrix.planaria_10-18h_vs_planaria_24-72h.edgeR.DE_results

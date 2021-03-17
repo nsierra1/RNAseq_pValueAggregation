@@ -1,0 +1,3 @@
+anemone.counts.matrix.anemone_0h_OR_vs_anemone_8h_OR.edgeR.DE_results
+anemone.counts.matrix.anemone_8h_OR_vs_anemone_24h_OR.edgeR.DE_results
+anemone.counts.matrix.anemone_24h_OR_vs_anemone_72h_OR.edgeR.DE_results

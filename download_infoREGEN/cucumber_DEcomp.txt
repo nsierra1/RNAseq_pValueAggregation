@@ -1,0 +1,4 @@
+cucumber.counts.matrix.cucumber_0d_vs_cucumber_3d.edgeR.DE_results
+cucumber.counts.matrix.cucumber_3d_vs_cucumber_7d.edgeR.DE_results
+cucumber.counts.matrix.cucumber_7d_vs_cucumber_14d.edgeR.DE_results
+cucumber.counts.matrix.cucumber_14d_vs_cucumber_21d.edgeR.DE_results
