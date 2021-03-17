@@ -12,7 +12,7 @@ cd ~/projects/HSR/data/
 	
 	gunzip -ck raw/SRR2012675_1.fastq.gz 34C_12h_1.fastq
 	gunzip -ck raw/SRR2012676_1.fastq.gz 34C_12h_2.fastq
-	cd..
+	cd ..
 	
 	### SALMON (SALMO SALAR) ###
 	# Three conditions, three replicates each, collected paired end
