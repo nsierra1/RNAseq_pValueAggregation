@@ -1,0 +1,3 @@
+chicken.counts.matrix.chicken_25C_AIL_vs_chicken_35C_AIL.edgeR.DE_results
+chicken.counts.matrix.chicken_25C_BRI_vs_chicken_35C_BRI.edgeR.DE_results
+chicken.counts.matrix.chicken_25C_FAY_vs_chicken_35C_FAY.edgeR.DE_results

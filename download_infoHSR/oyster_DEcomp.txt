@@ -1,0 +1,3 @@
+oyster.counts.matrix.oyster_4C_0h_vs_oyster_25C_6h.edgeR.DE_results
+oyster.counts.matrix.oyster_25C_6h_vs_oyster_25C_12h.edgeR.DE_results
+oyster.counts.matrix.oyster_25C_12h_vs_oyster_25C_24h.edgeR.DE_results
