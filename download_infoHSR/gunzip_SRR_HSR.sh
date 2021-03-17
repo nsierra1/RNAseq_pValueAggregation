@@ -30,7 +30,7 @@ cd ~/projects/HSR/data/
   	gunzip -ck raw/SRR6432694_1.fastq.gz > 13C_0h_3.fastq
   	cd ..
   	
-  	### ANT (CATAGLYPHIS BOMBYCINA) ###
+  	### SILVERANT (CATAGLYPHIS BOMBYCINA) ###
   	# Two conditions, four replicates each, collected paired end
   	cd ant
   	gunzip -ck raw/SRR6309587_1.fastq.gz > 25C_3h_1.fastq
@@ -57,7 +57,7 @@ cd ~/projects/HSR/data/
   	gunzip -ck raw/SRR1068592.fastq.gz > 25C_12h_2.fastq
 
   	gunzip -ck raw/SRR1068595.fastq.gz > 25C_24h_1.fastq
-  	gunzip -ck raw/SRR1068594.fastq.gz > 25C_24h_2.fastq
+  	gunzip -ck raw/SRR1068594.fastq.gz > 25C_24h2.fastq
   	cd ..
   	
   	### CHICKEN (GALLUS GALLUS) ###
